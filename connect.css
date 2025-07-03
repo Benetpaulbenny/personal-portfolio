@@ -1,0 +1,116 @@
+
+.container{
+    background-image: url(images/contact-bg.webp);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.connect-container{
+    width: 48%;
+    display: flex
+;
+    margin: auto;
+    background: #fff;
+    padding: 73px 30px;
+    border-radius: 30px;
+    align-items: center;
+    gap: 45px;
+    justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: #d9d9d9 0px 4px 20px 0px;
+}
+.name-section{
+        display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    min-width: fit-content;
+}
+.socials{
+    display: flex;
+    flex-direction: column;
+        gap: 20px;
+}
+.socials > a{
+    display: flex
+;
+    flex-direction: row;
+    /* min-width: 86px; */
+    width: 260px;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    background: #eeeeee;
+    /* gap: 28px; */
+    border-radius: 10px;
+    color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.name-section > span{
+    font-size: 60px;
+    letter-spacing: 0;
+}
+.hr-line{
+    background: #eeeeee;
+    width: 1px;
+    height: 300px;
+}
+
+.dontClick{
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    font-size: 12px;
+    color: #c0c0c0;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.name-section > span {
+    position: relative;
+    overflow: hidden;
+}
+
+#revealMessage{
+    flex-direction: column;
+    font-family: monospace;
+    line-height: 1.5;
+    font-size: 14px;
+}
+.hire-button{
+    margin-top: 30px;
+    background-color: #8f8f8f;
+    color: #fff;
+    width: fit-content;
+    padding: 5px;
+    margin-left: auto;
+    cursor: pointer;
+}
+@media screen and (max-width: 1024px){
+    .connect-container{
+        width: 80%;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .connect-container{
+        flex-direction: column;
+        box-shadow: none;
+        background: transparent;
+        gap: 10px;
+    }
+    .hr-line{
+        width: 100%;
+        height: 1px;
+    }
+    .name-section > span{
+        letter-spacing: -5px;
+        font-size: 50px;
+    }
+}

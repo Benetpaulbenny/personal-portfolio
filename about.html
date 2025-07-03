@@ -1,0 +1,147 @@
+<!doctypehtml>
+<html lang=en>
+   <head>
+      <meta charset=UTF-8>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+      <title>Benet Paul Benny</title>
+      <meta content="Meet Benet Paul Benny — a developer, engineer, and UI/UX architect with a passion for clean design, technical precision, and meaningful experiences."name=description>
+      <meta content="Benet Paul Benny, about Benet, engineer portfolio, creative developer, UI UX engineer, full stack developer"name=keywords>
+      <meta content="Benet Paul Benny"name=author>
+      <meta content="About Benet Paul Benny — Developer, Engineer & Designer"property=og:title>
+      <meta content="Explore Benet's mindset, background, and philosophy — blending code, creativity, and engineering insight."property=og:description>
+      <meta content="images/preview.webp" property="og:image">
+      <meta content="https://www.benetpaulbenny.me/about.html" property="og:url">
+      <meta content=profile property=og:type>
+      <meta content=summary_large_image name=twitter:card>
+      <meta content="About Benet Paul Benny — Developer, Engineer & Designer"name=twitter:title>
+      <meta content="Explore Benet's mindset, background, and philosophy — blending code, creativity, and engineering insight."name=twitter:description>
+      <meta content="images/preview.webp" name="twitter:image">
+      <link href="https://www.benetpaulbenny.me/about.html" rel="canonical">
+      <link href=https://fonts.googleapis.com rel=preconnect>
+      <link href=https://fonts.gstatic.com rel=preconnect crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"rel=stylesheet>
+      <link href=index.css rel=stylesheet>
+      <link href=about.css rel=stylesheet>
+      <link href=images/favicon.ico rel="shortcut icon"type=image/x-icon>
+   <body>
+      <main class=container>
+         <div class=head-section>
+            <a href=index.html class=logo>B.</a>
+            <div class=social-links><span class=links><a href=https://www.linkedin.com/in/benet-paul-benny-538088223>Linkedin</a>/<a href=https://github.com/Benetpaulbenny>GitHub</a>/<a href="https://x.com/benetpaulbenny?s=21">X</a></span></div>
+         </div>
+         <div class=about-main-section>
+            <div class=about-all-content id=about-all-content>
+               <div class=image-section>
+                <div class="image-and-name-wrapper">
+                  <div class=image-wrapper id=photo-layers>
+                     <div class="layer layer1"></div>
+                     <div class="layer layer2"></div>
+                     <div class="layer layer2"></div>
+                     <img alt="Benet Paul Benny"class=benet-image src=images/benet-paul-benny.webp>
+                  </div>
+                  <p>alt:<span class=name>Benet Paul Benny</span></p>
+                </div>
+                  <div class=scroll-hint-container><span class=scroll>scroll →</span></div>
+               </div>
+               <div class=detail-section>
+                  <p class=det><span class=subtitle>[PERSON]&nbsp;</span>A 2003 native living in Kerala, India, immersed in the world of coding and design. My passion for coding dates back to high school, and I've been doing it ever since.</p>
+                  <p class=det><span class=subtitle>[DEVELOPER]&nbsp;</span>I do whether it's frontend magic, backend alchemy, or diving into databases. I create websites from pixel-perfect designs to flawless user experiences.</p>
+                  <p class=det><span class=subtitle>[UI/UX ARCHITECT]&nbsp;</span>I practice in creating user-friendly interfaces and delightful user experiences. Each interaction—click, swipe, or otherwise—is carefully tuned to maximize pleasure and engagement.</p>
+                  <p class=det><span class=subtitle>[ENGINEER]&nbsp;</span>Trained to think in systems, solve real-world problems with logic and creativity, and build solutions that are both efficient and reliable — that’s the mindset I bring to everything I create.</p>
+               </div>
+               <div class=resume-section>
+                  <p class=det><span class=subtitle>[BEYOND TECHNOLOGY]&nbsp;</span>When I'm not immersed in lines of code, you'll find me behind the lens, capturing moments and bringing stories to life through photography and editing. I also have a love for the open road, where driving serves as both a source of relaxation and inspiration.</p>
+                  <div class=about-social-links>
+                     <div class=link-section><span class=subtitle>SOCIALS</span><br><a href=https://www.instagram.com/benet.paul class=subtitle>INSTAGRAM</a><a href=https://www.linkedin.com/in/benet-paul-benny-538088223 class=subtitle>LINKEDIN</a><a href="https://x.com/benetpaulbenny?s=21"class=subtitle>X</a><a href=https://discordapp.com/users/737987111281623131 class=subtitle>DISCORD</a></div>
+                     <a href=Files/Resume.pdf class=button>RESUMÉ AS PDF</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <footer>
+            <nav>
+               <ul>
+                  <li><a href=index.html>Home</a></li>
+                  <li><a href=works.html>Works</a></li>
+                  <li><a href=connect.html>Connect</a></li>
+               </ul>
+            </nav>
+         </footer>
+      </main>
+      <script>const wrapper = document.getElementById("photo-layers");
+const layers = wrapper.querySelectorAll(".layer");
+
+let isHovering = false;
+
+wrapper.addEventListener("mouseenter", () => {
+  isHovering = true;
+  wrapper.classList.add("enabled");
+});
+
+wrapper.addEventListener("mouseleave", () => {
+  isHovering = false;
+  wrapper.classList.remove("enabled");
+  layers.forEach((layer) => {
+    layer.style.transform = `translateZ(0px) translate(0px, 0px)`;
+    layer.style.opacity = 0;
+  });
+});
+
+wrapper.addEventListener("mousemove", (e) => {
+  if (!isHovering) return;
+
+  const rect = wrapper.getBoundingClientRect();
+  const offsetX = e.clientX - rect.left;
+  const offsetY = e.clientY - rect.top;
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+
+  const percentX = (offsetX - centerX) / centerX;
+  const percentY = (offsetY - centerY) / centerY;
+
+  layers.forEach((layer, i) => {
+    const depth = (i + 1) * 10;
+    const moveX = percentX * depth;
+    const moveY = percentY * depth;
+    layer.style.opacity = 0.1 + i * 0.1;
+    layer.style.transform = `translateZ(${depth}px) translate(${moveX}px, ${moveY}px)`;
+  });
+});</script><script>document.addEventListener("DOMContentLoaded", () => {
+  const aboutSection = document.querySelector('.about-main-section');
+
+  aboutSection.addEventListener('wheel', (e) => {
+    if (window.innerWidth <= 760) {
+      e.preventDefault();
+      aboutSection.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
+});function setVH() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setVH();
+window.addEventListener('resize', setVH);
+window.addEventListener('orientationchange', setVH);
+function initLayeredImageLoading() {
+    const imageWrappers = document.querySelectorAll('.image-wrapper');
+    
+    imageWrappers.forEach((wrapper) => {
+        const imgElement = wrapper.querySelector('img');
+        
+        if (imgElement) {
+            imgElement.addEventListener('load', () => {
+                wrapper.classList.add('loaded');
+            });
+            
+            imgElement.addEventListener('error', () => {
+                wrapper.classList.add('loaded');
+            });
+            
+            if (imgElement.complete) {
+                wrapper.classList.add('loaded');
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initLayeredImageLoading);</script></body></head></html>

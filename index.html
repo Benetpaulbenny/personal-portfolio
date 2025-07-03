@@ -1,0 +1,126 @@
+<!doctypehtml>
+<html lang=en>
+   <head>
+      <meta charset=UTF-8>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+      <title>Benet Paul Benny</title>
+      <meta content="Portfolio of Benet Paul Benny — a developer, designer, and engineer focused on clean code, user experience, and creative problem-solving."name=description>
+      <meta content="Benet Paul Benny, Web Developer, UI UX Designer, Frontend Developer, Full Stack Developer, Web Engineer, Creative Developer"name=keywords>
+      <meta content="Benet Paul Benny"name=author>
+      <meta content="Benet Paul Benny — Full Stack Developer"property=og:title>
+      <meta content="Creative developer and designer portfolio focused on performance and user-centric design."property=og:description>
+      <meta content=images/preview.webp property=og:image>
+      <meta content="https://www.benetpaulbenny.me/" property="og:url">
+      <meta content=website property=og:type>
+      <meta content=summary_large_image name=twitter:card>
+      <meta content="Benet Paul Benny — Developer & Designer"name=twitter:title>
+      <meta content="Creative developer and designer portfolio focused on performance and user-centric design."name=twitter:description>
+      <meta content=images/preview.webp name=twitter:image>
+      <link href=https://fonts.googleapis.com rel=preconnect>
+      <link href=https://fonts.gstatic.com rel=preconnect crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"rel=stylesheet>
+      <link href=images/favicon.ico rel="shortcut icon"type=image/x-icon>
+      <link href=index.css rel=stylesheet>
+      <link rel="canonical" href="https://www.benetpaulbenny.me/">
+      <script type=application/ld+json>{
+         "@context": "https://schema.org",
+         "@type": "Person",
+         "name": "Benet Paul Benny",
+         "url": "https://www.benetpaulbenny.me/",
+         "sameAs": [
+           "https://www.linkedin.com/in/benet-paul-benny-538088223",
+           "https://github.com/Benetpaulbenny",
+           "https://x.com/benetpaulbenny?s=21"
+         ],
+         "jobTitle": "Developer, Designer, Engineer",
+         "description": "Portfolio of Benet Paul Benny — a developer, designer, and engineer focused on clean code, user experience, and creative problem-solving.",
+         "hasPart": [
+           {
+             "@type": "CreativeWork",
+             "name": "Portfolio Website",
+             "description": "Personal portfolio website showcasing web development and design projects.",
+             "url": "https://www.benetpaulbenny.me/",
+             "keywords": "portfolio, web development, design, projects"
+           },
+           {
+             "@type": "CreativeWork",
+             "name": "SOunz",
+             "description": "An online collaboration tool and social media platform for musicians and music producers.",
+             "url": "https://www.benetpaulbenny.me/sounz.html",
+             "keywords": "Social media, collaboration, music, design, development, database, major project"
+           },
+           {
+             "@type": "CreativeWork",
+             "name": "Silly Techy",
+             "description": "A playful tech blog that shares humorous yet insightful takes on developer life and software quirks.",
+             "url": "https://www.benetpaulbenny.me/silly-techy.html",
+             "keywords": "tech humor, developer blog, web fun, programming jokes"
+           }
+         ]
+         }
+      </script>
+   </head>
+   <body>
+      <main class=container>
+         <div class=head-section>
+            <a href=index.html class=logo>B.</a>
+            <div class=social-links><span class=links><a href=https://www.linkedin.com/in/benet-paul-benny-538088223>Linkedin</a>/<a href=https://github.com/Benetpaulbenny>GitHub</a>/<a href="https://x.com/benetpaulbenny?s=21">X</a></span></div>
+         </div>
+         <div class=main-section>
+            <div class=container-main>
+               <div class=main><span class=main-span><span class=start>I'm</span><span class=benet><span class=eachlet>B</span><span class=eachlet>e</span><span class=eachlet>n</span><span class=eachlet>e</span><span class=eachlet>t</span></span></span><span class=end>Paul Benny</span></div>
+               <div class=whoami>
+                  <span class=start1>& I do &lt;/</span>
+                  <div class=who><span class=roles id=typewriter-role></span></div>
+                  <span class=start1>></span>
+               </div>
+            </div>
+         </div>
+         <footer>
+            <nav>
+               <ul>
+                  <li><a href=about.html>About</a></li>
+                  <li><a href=works.html>Works</a></li>
+                  <li><a href=connect.html>Connect</a></li>
+               </ul>
+            </nav>
+         </footer>
+      </main>
+      <script>const roles = [
+         "frontend development",
+         "backend development",
+         "full stack development",
+         "UI-UX design",
+         "responsive web design",
+         "freelance projects",
+         "clean css structuring"
+         ];
+         
+         let currentRole = 0;
+         let charIndex = 0;
+         const roleElement = document.getElementById("typewriter-role");
+         
+         function typeRole() {
+         if (charIndex <= roles[currentRole].length) {
+           roleElement.textContent = roles[currentRole].substring(0, charIndex++);
+           setTimeout(typeRole, 60);
+         } else {
+           setTimeout(() => {
+             charIndex = 0;
+             currentRole = (currentRole + 1) % roles.length;
+             typeRole();
+           }, 1500);
+         }
+         }
+         
+         typeRole();
+         function setVH() {
+         const vh = window.innerHeight * 0.01;
+         document.documentElement.style.setProperty('--vh', `${vh}px`);
+         }
+         setVH();
+         window.addEventListener('resize', setVH);
+         window.addEventListener('orientationchange', setVH);
+      </script>
+   </body>
+</html>

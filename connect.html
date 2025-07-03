@@ -1,0 +1,147 @@
+<!doctypehtml><html lang=en><head><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Benet Paul Benny</title><link href=https://www.benetpaulbenny.me/connect.html rel=canonical><meta content="Want to collaborate or say hello? Connect with Benet Paul Benny — a developer who loves fixing broken things and building bold ideas from scratch."name=description><meta content="Benet Paul Benny, contact developer, connect, mail developer, web project inquiry, hire Benet"name=keywords><meta content="Benet Paul Benny"name=author><meta content="Connect with Benet Paul Benny — Developer & Engineer"property=og:title><meta content="Let’s fix things together — from web rebuilds to wild ideas. Contact Benet Paul Benny."property=og:description><meta content=images/preview.webp property=og:image><meta content=https://www.benetpaulbenny.me/connect.html property=og:url><meta content=website property=og:type><meta content=summary_large_image name=twitter:card><meta content="Connect with Benet Paul Benny — Developer & Engineer"name=twitter:title><meta content="Let’s fix things together — from web rebuilds to wild ideas. Contact Benet Paul Benny."name=twitter:description><meta content=images/preview.webp name=twitter:image><link href=https://fonts.googleapis.com rel=preconnect><link href=https://fonts.gstatic.com rel=preconnect crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"rel=stylesheet><link href=index.css rel=stylesheet><link href=connect.css rel=stylesheet><link href=animations.css rel=stylesheet><link href=images/favicon.ico rel="shortcut icon"type=image/x-icon><script type=application/ld+json>{
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Benet Paul Benny",
+        "jobTitle": "Web Developer",
+        "email": "mailto:benetpaulbenny@gmail.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/benet-paul-benny-538088223",
+          "https://github.com/Benetpaulbenny",
+          "https://x.com/benetpaulbenny",
+          "https://www.instagram.com/benet.paul"
+        ],
+        "url": "https://www.benetpaulbenny.me/connect.html"
+      },
+      "description": "Get in touch with Benet Paul Benny — web developer and engineer available for freelance work, updates, or collaboration."
+    }</script></head><body><!--
+    ================================================================
+
+     You weren’t supposed to look here... But since you’re this curious, maybe we should work together 👉 benetpaulbenny@gmail.com 
+     
+    ================================================================
+     --><main class=container><section class=head-section><a href=index.html class=logo>B.</a><div class=social-links><span class=links><a href=index.html>Visit Portfolio</a></span></div></section><div class=connect-container id=connect-box><div class=name-section id=name-section><span class=benet>BENET</span><span class=paul>PAUL</span><span class=benny>BENNY</span></div><div class=hr-line id=hrLine></div><div class=socials id=socials><a href=mailto:benetpaulbenny@gmail.com data-text=MAIL id=mailLink>MAIL<img alt="mail icon"src=images/mail.svg></a><a href=https://www.linkedin.com/in/benet-paul-benny-538088223 data-text=LINKEDIN id=linkedLink>LINKEDIN<img alt="linkedin icon"src=images/link.svg></a><a href="https://x.com/benetpaulbenny?s=21"data-text=X id=xLink>X<img alt="x icon"src=images/x.svg></a><a href=https://www.instagram.com/benet.paul data-text=INSTAGRAM id=instaLink>INSTAGRAM<img alt="insta icon"src=images/insta.svg></a></div><div class=dontClick id=dontClick onclick=triggerGlitch()><p class=dont id=dont>You better never-ever click here</p></div><div class=name-glitch-1 id=revealMessage style=display:none><p>You broke the interface.<br><br>Luckily, fixing broken things is what I do.<br>I build fast, modern, and resilient websites<br>— from scratch or from the mess you abandoned last summer.<br><br>Whether you need a full build, an overhaul, or just someone who knows what they’re doing — I’m in.</p><a href=mailto:benetpaulbenny@gmail.com class=hire-button>Mail me your idea before it rots in your notes app →</a></div></div></main><script>function setupTextCorruption() {
+      const revealMessage = document.getElementById("revealMessage");
+      const paragraph = revealMessage.querySelector('p');
+
+      if (paragraph) {
+          paragraph.setAttribute('data-text', paragraph.textContent);
+      }
+
+      const corruptibleWords = ['broken', 'fixing', 'interface', 'build', 'modern', 'resilient'];
+      let paragraphHTML = paragraph.innerHTML;
+
+      corruptibleWords.forEach(word => {
+          const regex = new RegExp(`\\b${word}\\b`, 'gi');
+          paragraphHTML = paragraphHTML.replace(regex, (match) => {
+              return match.split('').map((char) => {
+                  if (Math.random() < 0.3) {
+                      return `<span class="corrupt-char">${char}</span>`;
+                  }
+                  return char;
+              }).join('');
+          });
+      });
+
+      paragraph.innerHTML = paragraphHTML;
+  }
+function setVH() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setVH();
+window.addEventListener('resize', setVH);
+window.addEventListener('orientationchange', setVH);
+  function triggerGlitch() {
+    // Existing social links glitch
+    const mailLink = document.getElementById('mailLink');
+    const xLink = document.getElementById('xLink');
+    const linkedLink = document.getElementById('linkedLink');
+    const instaLink = document.getElementById('instaLink');
+    const mainSocialContainer = document.getElementById('socials');
+    const links = [mailLink, linkedLink, xLink, instaLink];
+    const glitchClasses = ['glitch-1', 'glitch-2', 'glitch-3', 'glitch-4'];
+    const clickbait = document.getElementById('dont');
+    const clickbaitContainer = document.getElementById('dontClick');
+
+    links.forEach((link, index) => {
+        clickbaitContainer.style.display = 'none';
+        
+        glitchClasses.forEach(cls => link.classList.remove(cls));
+        void link.offsetWidth; 
+
+        const randomDelay = Math.random() * 300;
+        setTimeout(() => {
+            link.classList.add(glitchClasses[index]);
+            
+            const durations = [6000, 7000, 5500, 6500]; 
+            setTimeout(() => {
+                link.classList.remove(glitchClasses[index]);
+            }, durations[index]);
+            setTimeout(() => {
+                mainSocialContainer.style.display = 'none';
+            }, durations[index]);
+        }, randomDelay);
+    });
+
+    const benetSpan = document.querySelector('.benet');
+    const paulSpan = document.querySelector('.paul');
+    const bennySpan = document.querySelector('.benny');
+    const mainNameContainer = document.getElementById('name-section');
+    const nameSpans = [benetSpan, paulSpan, bennySpan];
+    const nameGlitchClasses = ['name-glitch-1', 'name-glitch-2', 'name-glitch-3'];
+    const nameTexts = ['BENET', 'PAUL', 'BENNY'];
+
+    nameSpans.forEach((span, index) => {
+        if (span) {
+            // Add data-text attribute for the glitch effect
+            span.setAttribute('data-text', nameTexts[index]);
+            
+            // Remove any existing name glitch classes
+            nameGlitchClasses.forEach(cls => span.classList.remove(cls));
+            void span.offsetWidth; // Force reflow
+
+            // Apply unique name glitch class with random staggered delay
+            const randomDelay = Math.random() * 500;
+            setTimeout(() => {
+                span.classList.add(nameGlitchClasses[index]);
+                // Remove glitch class after animation completes
+                const durations = [8000, 7000, 7500]; // Match animation durations
+                setTimeout(() => {
+                    span.classList.remove(nameGlitchClasses[index]);
+                }, durations[index]);
+                setTimeout(() => {
+                    mainNameContainer.style.display = 'none';
+                }, durations[index]);
+            }, randomDelay);
+        }
+    });
+
+    // HR glitch animation (existing code)
+    const hrLine = document.getElementById('hrLine');
+    hrLine.classList.remove('glitch');
+    void hrLine.offsetWidth;
+    setTimeout(() => {
+        hrLine.classList.add('glitch');
+    });
+    setTimeout(() => {
+        hrLine.style.display = 'none';
+    }, 7000);
+
+    setTimeout(() => {
+      const message = document.getElementById("revealMessage");
+      message.style.display = "flex";
+    }, 8000);
+    setTimeout(() => {
+      const message = document.getElementById("revealMessage");
+      const container = document.querySelector(".container");
+      message.style.display = "flex";
+      container.classList.add("signal-lost");
+
+      setTimeout(() => {
+                    setupTextCorruption();
+                }, 2000);
+    }, 8000);
+
+}</script></body></html>
